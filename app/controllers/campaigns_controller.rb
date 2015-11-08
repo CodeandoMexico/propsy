@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-  before_action :authenticate_publisher!
+  before_action :authenticate_publisher!, except: :show
 
   def index
   end
@@ -19,7 +19,13 @@ class CampaignsController < ApplicationController
     render :new
   end
 
+  def show
+    @campaign = Campaign.find(params[:id])
+    render json: @campaign
+  end
+
   private
+
   def secure_params
     params.require(:campaign).permit :title, :description, :sources_text
   end

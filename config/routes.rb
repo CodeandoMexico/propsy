@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :campaigns, only: [:index, :new, :create] do
+  resources :campaigns, only: [:index, :new, :create, :show] do
     resources :supports, only: [:create]
   end
 end
