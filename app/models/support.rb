@@ -1,7 +1,7 @@
 class Support < ActiveRecord::Base
   belongs_to :campaign, counter_cache: true
 
-  # after_create :create_petition
+  after_create :create_petition
 
   def fetch_status
     update status: bazooka_client.fetch["status"]
