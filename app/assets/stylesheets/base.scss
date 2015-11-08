@@ -13,6 +13,16 @@ body {
   font-weight: 100;
 }
 
+a {
+  text-decoration: none;
+  color: $light-blue;
+}
+
+.form-link {
+  padding: 1em;
+  display: block;
+}
+
 .dim-text {
   color: $light-gray;
   margin-top: 0.5em;
