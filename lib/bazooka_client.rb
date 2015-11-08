@@ -1,7 +1,8 @@
 require 'rest-client'
 
 class BazookaClient
-  DOMAIN='http://info-bazooka.herokuapp.com/petitions/agency'
+  DOMAIN='http://info-bazooka.herokuapp.com/petitions'
+
 
   attr_accessor :support
 
@@ -25,11 +26,11 @@ class BazookaClient
   end
 
   def create_petition
-    RestClient.post(DOMAIN, params)
+    JSON.parse(RestClient.post([DOMAIN, 'agency'].join('/'), params))
   end
 
   def fetch
-    RestClient.get([DOMAIN, support.petition_id].join('/'))
+    JSON.parse(RestClient.get([DOMAIN, support.petition_id].join('/')))
   end
 
   private
@@ -46,6 +47,7 @@ class BazookaClient
     self.class.default_user.map do |k,v| 
       result[k] = support.send(k) || v
     end
+    result[:last_name] = result[:last_name].split
     result
   end
 
