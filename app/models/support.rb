@@ -11,7 +11,7 @@ class Support < ActiveRecord::Base
 
   def create_petition
     response = bazooka_client.create_petition
-    update(petition_id: response["job_id"], status: response["status"])
+    update(petition_id: response["job"], status: response["status"])
   end
 
   def bazooka_client
