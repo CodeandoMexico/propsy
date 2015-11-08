@@ -1,5 +1,6 @@
 class Campaign < ActiveRecord::Base
   belongs_to :publisher
+  has_many   :supports
 
   def sources_text
     return '' if !self.sources.present?
