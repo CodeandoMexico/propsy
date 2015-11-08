@@ -1,0 +1,7 @@
+<div id='campaign:<%= campaign.id %>' class='campaign pure-u-1'>
+  <h3><%= campaign.title %></h3>
+  <p class='dim-text'>
+    <%= distance_of_time_in_words Time.now, campaign.created_at %>
+  </p>
+  <p><%= simple_format campaign.description %></p>
+</div>

@@ -1,19 +1,26 @@
-<h2>Campaign</h2>
+<div class='content'>
+  <div class='sign-form'>
+    <h2 class='content-head is-center'>New Campaign</h2>
 
-<%= form_for @campaign do |form| %>
-  <div class='field'>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form_for @campaign, html: { class: 'pure-form pure-form-aligned' } do |form| %>
+
+      <%= form_error_messages!(@campaign) %>
+
+      <div class='pure-control-group'>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+      <div class='pure-control-group'>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+      </div>
+      <div class='pure-control-group'>
+        <%= form.label :sources_text %>
+        <%= form.text_field :sources_text %>
+      </div>
+      <div class='pure-actions'>
+        <%= form.submit class: 'pure-button pure-button-primary' %>
+      </div>
+    <% end %>
   </div>
-  <div class='field'>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-  <div class='field'>
-    <%= form.label :sources_text %>
-    <%= form.text_field :sources_text %>
-  </div>
-  <div class='action'>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

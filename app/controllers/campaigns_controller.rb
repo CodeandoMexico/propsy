@@ -2,6 +2,8 @@ class CampaignsController < ApplicationController
   before_action :authenticate_publisher!
 
   def index
+    @campaigns = Campaign.where(publisher: current_publisher)
+      .order(created_at: :desc)
   end
 
   def new
@@ -16,6 +18,7 @@ class CampaignsController < ApplicationController
       return redirect_to campaigns_path
     end
 
+    flash.now[:alert] = 'Please review form errors'
     render :new
   end
 

@@ -1,0 +1,224 @@
+@import 'pure-min.css';
+@import 'grids-responsive-min';
+
+$dark-blue: #2d3e50;
+$blue: #1f8dd6;
+$light-blue: #6FBEF3;
+$light-gray: #dedede;
+$red: #921515;
+$light-red: #ffe3e3;
+
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.dim-text {
+  color: $light-gray;
+  margin-top: 0.5em;
+}
+
+#campaigns {
+  width: 90%;
+  max-width: 960px;
+  margin: 50px auto;
+}
+
+.campaign {
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+#error_explanation {
+  color: $red;
+  background-color: $light-red;
+  border-radius: 5px;
+
+  padding: 1em;
+  margin-bottom: 1.5em;
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  li {
+    font-size: 0.9em;
+  }
+}
+
+.field_with_errors {
+  display: inline;
+
+  input, textarea {
+    border: 1px solid $red !important;
+  }
+}
+
+.pure-checkbox {
+  display: inline-block !important;
+  float: left;
+  margin: 3px !important;
+}
+
+.pure-actions {
+  padding: 1.5em 0 0 0;
+  text-align: center;
+}
+
+.pure-control-group {
+  em {
+    color: $light-gray;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  input {
+    width: 300px;
+  }
+
+  textarea {
+    width: 300px;
+    height: 150px;
+  }
+}
+
+.sign-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  border: 1px solid $light-gray;
+  border-radius: 5px;
+  padding: 2em;
+
+  .content-head {
+    margin: 1em 0 1em;
+  }
+}
+
+.is-center {
+  text-align: center;
+}
+
+.content-head {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 2em 0 1em;
+}
+
+.content {
+  padding: 1em;
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 87%;
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
+  background: white;
+}
+
+.pure-button-action {
+  background: white;
+  color: $blue !important;
+  border-radius: 5px !important;
+  font-size: 120% !important;
+}
+
+.splash-subhead {
+  color: white;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.splash-head {
+  font-size: 300%;
+  color: white;
+  padding: 1em 1.6em;
+  font-weight: 100;
+  border-radius: 5px;
+  line-height: 1em;
+}
+
+.splash {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.splash-container {
+  background: $blue;
+  z-index: 1;
+  overflow: hidden;
+  /* The following styles are required for the "scroll-over" effect */
+  width: 100%;
+  height: 88%;
+  top: 0;
+  left: 0;
+  position: fixed !important;
+}
+
+.pure-menu-fixed {
+  border-bottom: none;
+  z-index: 4;
+}
+
+.home-menu {
+  text-align: left;
+  background: $dark-blue;
+  padding: 0.5em;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
+}
+
+.pure-menu-heading {
+  color: white !important;
+  font-weight: 400;
+  font-size: 120%;
+  zoom: 1;
+  vertical-align: middle;
+  padding: .5em 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.pure-menu-list {
+  display: inline-block;
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: left;
+}
+
+.pure-menu-item {
+  zoom: 1;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.pure-menu-link {
+  color: $light-blue !important;
+  padding: .5em 1em;
+
+  &:hover {
+    background-color: lighten($light-blue, 20%) !important;
+  }
+}

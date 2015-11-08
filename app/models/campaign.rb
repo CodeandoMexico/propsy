@@ -1,6 +1,8 @@
 class Campaign < ActiveRecord::Base
   belongs_to :publisher
 
+  validates :title, :description, presence: true
+
   def sources_text
     return '' if !self.sources.present?
     self.sources.join(', ')
