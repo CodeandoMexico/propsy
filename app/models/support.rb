@@ -3,11 +3,15 @@ class Support < ActiveRecord::Base
 
   # after_create :create_petition
 
+  def fetch_status
+    update status: bazooka_client.fetch["status"]
+  end
+
   private
 
   def create_petition
     response = bazooka_client.create_petition
-    update(petition_id: response["job_id"])
+    update(petition_id: response["job_id"], status: response["status"])
   end
 
   def bazooka_client

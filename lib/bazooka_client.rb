@@ -28,7 +28,7 @@ class BazookaClient
     RestClient.post(DOMAIN, params)
   end
 
-  def fetch_status
+  def fetch
     RestClient.get([DOMAIN, support.petition_id].join('/'))
   end
 
