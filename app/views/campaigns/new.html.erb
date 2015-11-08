@@ -13,6 +13,10 @@
     <%= form.label :sources_text %>
     <%= form.text_field :sources_text %>
   </div>
+    <div class='field'>
+    <%= form.label :petition_type %>
+    <%= form.select :petition_type, Campaign::PETITION_TYPES %>
+  </div>
   <div class='action'>
     <%= form.submit %>
   </div>

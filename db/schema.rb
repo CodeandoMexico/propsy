@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108012654) do
+ActiveRecord::Schema.define(version: 20151108040925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151108012654) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "supports_count", default: 0
+    t.string   "petition_type"
   end
 
   add_index "campaigns", ["supports_count"], name: "index_campaigns_on_supports_count", using: :btree
@@ -49,8 +50,19 @@ ActiveRecord::Schema.define(version: 20151108012654) do
 
   create_table "supports", force: :cascade do |t|
     t.integer  "campaign_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "nationality"
+    t.string   "education_level"
+    t.string   "profession"
+    t.string   "age"
+    t.string   "petition_id"
   end
+
+  add_index "supports", ["petition_id"], name: "index_supports_on_petition_id", using: :btree
 
 end

@@ -27,6 +27,6 @@ class CampaignsController < ApplicationController
   private
 
   def secure_params
-    params.require(:campaign).permit :title, :description, :sources_text
+    params.require(:campaign).permit :title, :description, :sources_text, :petition_type
   end
 end

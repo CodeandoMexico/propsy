@@ -1,4 +1,5 @@
 class Campaign < ActiveRecord::Base
+  PETITION_TYPES= %w{public personal correction}
   belongs_to :publisher
   has_many   :supports
 
