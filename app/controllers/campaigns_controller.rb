@@ -28,7 +28,10 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
-    render json: @campaign
+    respond_to do |format|
+      format.html { }
+      format.json { render json: @campaign }
+    end
   end
 
   private
