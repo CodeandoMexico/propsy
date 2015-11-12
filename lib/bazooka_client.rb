@@ -53,8 +53,10 @@ class BazookaClient
 
   def campaign_information
     {
+      dependency: "27001",
       text: campaign.description,
-      petition_type: campaign.petition_type
+      type: campaign.petition_type,
+      extra: ""
     }
   end
 
